@@ -43,6 +43,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${instructorInstance?.staffId}">
+				<li class="fieldcontain">
+					<span id="staffId-label" class="property-label"><g:message code="instructor.staffId.label" default="Staff Id" /></span>
+					
+						<span class="property-value" aria-labelledby="staffId-label"><g:fieldValue bean="${instructorInstance}" field="staffId"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

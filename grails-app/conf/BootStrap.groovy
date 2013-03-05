@@ -8,9 +8,14 @@ class BootStrap {
 
     	println("BootStrap::init");
 
-	def tom_instructor = Instructor.findByInstructorName('64535d'); 
+	def tom_instructor = Instructor.findByStaffId('646345d') ?: new Instructor(staffId:'646345d', 			instructorName:'Tom Presbury').save();
+	
+	def matthew_instructor = Instructor.findByStaffId('333333') ?: new Instructor(staffId:'333333', 			instructorName:'Matthew Love').save();
 
-	println("Result of kind by staffid for tom: ${tom_instructor}");
+	def web_arch_course = Course.findByCourseCode('44334dd') ?: new Course(courseCode:'44334dd',
+										courseName: 'Web Architectures',
+										courseDescription: ' So boring')
+													.save();
 	
     }
 

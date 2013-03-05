@@ -3,6 +3,7 @@ package uk.ac.shu.webarch.eRegister
 class Instructor {
 
 	String instructorName
+	String staffId
 	Set classTaught
 	
 

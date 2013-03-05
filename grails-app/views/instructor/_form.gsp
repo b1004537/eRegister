@@ -27,3 +27,11 @@
 	<g:textField name="instructorName" value="${instructorInstance?.instructorName}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'staffId', 'error')} ">
+	<label for="staffId">
+		<g:message code="instructor.staffId.label" default="Staff Id" />
+		
+	</label>
+	<g:textField name="staffId" value="${instructorInstance?.staffId}"/>
+</div>
+
