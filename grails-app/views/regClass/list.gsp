@@ -26,6 +26,8 @@
 					
 						<th><g:message code="regClass.classInstructor.label" default="Class Instructor" /></th>
 					
+						<th><g:message code="regClass.course.label" default="Course" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +35,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${regClassInstance.id}">${fieldValue(bean: regClassInstance, field: "classInstructor")}</g:link></td>
+					
+						<td>${fieldValue(bean: regClassInstance, field: "course")}</td>
 					
 					</tr>
 				</g:each>

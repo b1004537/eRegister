@@ -24,11 +24,15 @@
 				<thead>
 					<tr>
 					
+						<th><g:message code="registerSheet.regclass.label" default="Regclass" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${registerSheetInstanceList}" status="i" var="registerSheetInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${registerSheetInstance.id}">${fieldValue(bean: registerSheetInstance, field: "regclass")}</g:link></td>
 					
 					</tr>
 				</g:each>

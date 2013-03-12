@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list registerSheet">
 			
+				<g:if test="${registerSheetInstance?.regclass}">
+				<li class="fieldcontain">
+					<span id="regclass-label" class="property-label"><g:message code="registerSheet.regclass.label" default="Regclass" /></span>
+					
+						<span class="property-value" aria-labelledby="regclass-label"><g:link controller="regClass" action="show" id="${registerSheetInstance?.regclass?.id}">${registerSheetInstance?.regclass?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

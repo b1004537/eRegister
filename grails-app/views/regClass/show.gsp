@@ -27,7 +27,27 @@
 				<li class="fieldcontain">
 					<span id="classInstructor-label" class="property-label"><g:message code="regClass.classInstructor.label" default="Class Instructor" /></span>
 					
-						<span class="property-value" aria-labelledby="classInstructor-label"><g:link controller="instructor" action="show" id="${regClassInstance?.classInstructor?.id}">${regClassInstance?.classInstructor?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="classInstructor-label"><g:link controller="instructor" action="show" id="${regClassInstance?.classInstructor?.id}">${regClassInstance?.classInstructor?.instructorName.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${regClassInstance?.course}">
+				<li class="fieldcontain">
+					<span id="course-label" class="property-label"><g:message code="regClass.course.label" default="Course" /></span>
+					
+						<span class="property-value" aria-labelledby="course-label"><g:link controller="course" action="show" id="${regClassInstance?.course?.id}">${regClassInstance?.course?.name.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${regClassInstance?.sheets}">
+				<li class="fieldcontain">
+					<span id="sheets-label" class="property-label"><g:message code="regClass.sheets.label" default="Sheets" /></span>
+					
+						<g:each in="${regClassInstance.sheets}" var="s">
+						<span class="property-value" aria-labelledby="sheets-label"><g:link controller="registerSheet" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
