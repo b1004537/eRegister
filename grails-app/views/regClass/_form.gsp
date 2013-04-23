@@ -2,12 +2,20 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: regClassInstance, field: 'classCode', 'error')} ">
+	<label for="classCode">
+		<g:message code="regClass.classCode.label" default="Class Code" />
+		
+	</label>
+	<g:textField name="classCode" value="${regClassInstance?.classCode}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: regClassInstance, field: 'classInstructor', 'error')} required">
 	<label for="classInstructor">
 		<g:message code="regClass.classInstructor.label" default="Class Instructor" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="classInstructor" name="classInstructor.id" from="${uk.ac.shu.webarch.eRegister.Instructor.list()}" optionKey="id" optionValue="instructorName" required="" value="${regClassInstance?.classInstructor?.id}" class="many-to-one"/>
+	<g:select id="classInstructor" name="classInstructor.id" from="${uk.ac.shu.webarch.eRegister.Instructor.list()}" optionKey="id" required="" value="${regClassInstance?.classInstructor?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: regClassInstance, field: 'course', 'error')} required">
@@ -15,7 +23,7 @@
 		<g:message code="regClass.course.label" default="Course" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="course" name="course.id" from="${uk.ac.shu.webarch.eRegister.Course.list()}" optionKey="id" required="" optionValue="name" value="${regClassInstance?.course?.id}" class="many-to-one"/>
+	<g:select id="course" name="course.id" from="${uk.ac.shu.webarch.eRegister.Course.list()}" optionKey="id" required="" value="${regClassInstance?.course?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: regClassInstance, field: 'sheets', 'error')} ">

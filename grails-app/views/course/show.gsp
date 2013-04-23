@@ -23,20 +23,40 @@
 			</g:if>
 			<ol class="property-list course">
 			
-				<g:if test="${courseInstance?.code}">
+				<g:if test="${courseInstance?.courseCode}">
 				<li class="fieldcontain">
-					<span id="code-label" class="property-label"><g:message code="course.code.label" default="Code" /></span>
+					<span id="courseCode-label" class="property-label"><g:message code="course.courseCode.label" default="Course Code" /></span>
 					
-						<span class="property-value" aria-labelledby="code-label"><g:fieldValue bean="${courseInstance}" field="code"/></span>
+						<span class="property-value" aria-labelledby="courseCode-label"><g:fieldValue bean="${courseInstance}" field="courseCode"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${courseInstance?.name}">
+				<g:if test="${courseInstance?.classes}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="course.name.label" default="Name" /></span>
+					<span id="classes-label" class="property-label"><g:message code="course.classes.label" default="Classes" /></span>
 					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${courseInstance}" field="name"/></span>
+						<g:each in="${courseInstance.classes}" var="c">
+						<span class="property-value" aria-labelledby="classes-label"><g:link controller="regClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${courseInstance?.courseDescription}">
+				<li class="fieldcontain">
+					<span id="courseDescription-label" class="property-label"><g:message code="course.courseDescription.label" default="Course Description" /></span>
+					
+						<span class="property-value" aria-labelledby="courseDescription-label"><g:fieldValue bean="${courseInstance}" field="courseDescription"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${courseInstance?.courseName}">
+				<li class="fieldcontain">
+					<span id="courseName-label" class="property-label"><g:message code="course.courseName.label" default="Course Name" /></span>
+					
+						<span class="property-value" aria-labelledby="courseName-label"><g:fieldValue bean="${courseInstance}" field="courseName"/></span>
 					
 				</li>
 				</g:if>

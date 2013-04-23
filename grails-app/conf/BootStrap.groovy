@@ -15,9 +15,19 @@ class BootStrap {
 	def web_arch_course = Course.findByCourseCode('44334dd') ?: new Course(courseCode:'44334dd',
 										courseName: 'Web Architectures',
 										courseDescription: ' So boring')
-													.save();
+													.save(failOnError:true);
 	
-    }
+    
+	def web_arch_RegClass = RegClass.findByClassCode ('121212') ?: new RegClass(classCode:'121212',								classInstructor:tom_instructor, 
+											course:web_arch_course)
+													.save(failOnError:true);
+			
+
+		
+
+
+	}
+	
 
     def destroy = {
     }

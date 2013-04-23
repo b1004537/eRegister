@@ -2,11 +2,10 @@ package uk.ac.shu.webarch.eRegister
 
 class Course {
 
-	String name
-	String code
+	
 	String courseName
 	String courseCode
-	String description
+	String courseDescription
 
 
 Set classes
@@ -27,6 +26,6 @@ static mapping = {
 	table 'course'
 	courseName colum: 'course_name'
 	courseCode column: 'mapped_course_code'
-	description column: 'course_desc', type:'text'
+	courseDescription column: 'course_desc', type:'text'
 	}
 }

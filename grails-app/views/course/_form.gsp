@@ -2,19 +2,44 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'code', 'error')} ">
-	<label for="code">
-		<g:message code="course.code.label" default="Code" />
+<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'courseCode', 'error')} ">
+	<label for="courseCode">
+		<g:message code="course.courseCode.label" default="Course Code" />
 		
 	</label>
-	<g:textField name="code" value="${courseInstance?.code}"/>
+	<g:textField name="courseCode" maxlength="20" value="${courseInstance?.courseCode}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'name', 'error')} ">
-	<label for="name">
-		<g:message code="course.name.label" default="Name" />
+<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'classes', 'error')} ">
+	<label for="classes">
+		<g:message code="course.classes.label" default="Classes" />
 		
 	</label>
-	<g:textField name="name" value="${courseInstance?.name}"/>
+	
+<ul class="one-to-many">
+<g:each in="${courseInstance?.classes?}" var="c">
+    <li><g:link controller="regClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="regClass" action="create" params="['course.id': courseInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'regClass.label', default: 'RegClass')])}</g:link>
+</li>
+</ul>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'courseDescription', 'error')} ">
+	<label for="courseDescription">
+		<g:message code="course.courseDescription.label" default="Course Description" />
+		
+	</label>
+	<g:textField name="courseDescription" value="${courseInstance?.courseDescription}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'courseName', 'error')} ">
+	<label for="courseName">
+		<g:message code="course.courseName.label" default="Course Name" />
+		
+	</label>
+	<g:textField name="courseName" value="${courseInstance?.courseName}"/>
 </div>
 
