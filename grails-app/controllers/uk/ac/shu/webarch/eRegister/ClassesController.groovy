@@ -5,22 +5,21 @@ import grails.converters.*
 
 class ClassesController {
 
-def index() { 
 
-	def index() {
+  def index() {
 		
-		def result=[
+    def result=[
 		classList:'one',
 		b:'two'
 	]
 
 
-withFormat
+     withFormat {
 	html result 
 	xml {render result as XML}
 	json {render result as JSON}
-	}
-    }
+     }
+   }
 }
 
 

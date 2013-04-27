@@ -7,5 +7,24 @@ class RegisterSheet {
 
 
     static constraints = {
+	
     }
+
+
+static hasMany = [classes: RegisterEntry]
+static mappedBy = [classes: 'registerSheet']
+
+
+static mapping = {
+
+	table 'registersheet'
+	regclass colum: 'student_name', type 'text'
+	}
+
+
+
+
+
+
+
 }
