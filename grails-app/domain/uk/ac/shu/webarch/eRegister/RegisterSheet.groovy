@@ -12,13 +12,13 @@ class RegisterSheet {
 
 
 static hasMany = [classes: RegisterEntry]
-static mappedBy = [classes: 'registerSheet']
+static mappedBy = [classes: 'regSigned']
 
 
 static mapping = {
 
 	table 'registersheet'
-	regclass colum: 'student_name', type 'text'
+	// regclass colum: 'student_name', type 'text'
 	}
 
 

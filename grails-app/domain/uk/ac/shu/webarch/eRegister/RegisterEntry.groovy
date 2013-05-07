@@ -9,8 +9,5 @@ class RegisterEntry {
     }
 
 
-	static hasOne = [sheets: RegisterSheet]
-	static mappedBy = [sheets: 'regEntry']
-
 
 }
